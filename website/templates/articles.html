@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+{% block title %}Articles | Wormhole Enterprise{% endblock %}
+
+{% block content %}
+  <h1 class="title">Current Articles</h1>
+
+  {% for a in article %}
+    {% if a.status == 1 %}
+      <div class="preview col-6 col-s-12 col-m-12">
+        <div class="col-4 col-s-4">
+        <h2><a href="/articles/{{ a.pk }}">{{ a.title }}</a></h2>
+        <small>Created by {{ a.createdBy }} @ {{ a.createdOn }}</small>
+        </div>
+        <div class="col-4 col-s-4">
+        <p>{{a.content}}</p>
+        </div>
+      </div>
+    {% endif %}
+  {% empty %}
+    <h3>There are no articles right now :<</h3>
+  {% endfor %}
+
+{% endblock %}

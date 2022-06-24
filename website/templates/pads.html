@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}e-commerce, handmade, glassblowing, art, artist, manufacturing, vateran, veteran owned{% endblock %}
+{% block description %}Welcome to the Official Documentation page for PADS!{% endblock %}
+{% block title %}PADS | Army Glass{% endblock %}
+
+{% block content %}
+<div class="pads">
+<!-- Cloned from https://github.com/othneildrew/Best-README-Template.git -->
+<div id="top"></div>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="{% url 'pads' %}">
+    <img src="{% static 'img/wormholeLogo.png' %}" alt="Logo" width="80" height="80">
+  </a>
+
+<h1 align="center">Project PADS</h1>
+
+  <p align="center">
+Personal Assistant and Deployment System
+    <br />
+    <a href="https://github.com/FrankWilson88/Project-PADS"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    ·
+    <a href="https://github.com/FrankWilson88/Project-PADS/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/FrankWilson88/Project-PADS/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details style="cursor:pointer;">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+<h2 id="about-the-project">About The Project</h2>
+
+<img class="screenshot" src="{% static 'img/padsScreenshot.png' %}" height="500px" width="500px">
+
+<p>
+PADS(Personal Assistant and Deployment System) is General Purpose Artificial Intelligence designed to carry out every day business tasks.
+It's purpose is to provide book keeping, employee timesheets, client tracking, automation, etc. It can do double entry accounting for hybrid manufacturing companies. 
+None of the data is loaded as Environment Variables, so your interaction with PADS is between you and it.
+It's original purpose was to serve as a website, with a relational historical database. 
+Work on this project began in Python using the Django Framework on June 23, 2021 at 5:30pm.
+The accounting database first came online Oct. 13th, 2021 at 11:48pm. The Bash Syntax was first created by Joe Corso on May 4th, 2022. 
+It was previously codenamed Project Eniac, to pay homage to the original project of the same name.
+</p>
+
+<p align="right"><a href="#top">back to top</a></p>
+
+
+
+<h2 id="built-with">Built With</h2>
+
+<li><a href="https://www.javascript.com/" title="Javascript">[Javascript]</a></li>
+<li><a href="https://www.python.org/" title="Python">[Python]</a></li>
+<li><a href="https://www.djangoproject.com/" title="Django">[Django]</a></li>
+<li><a href="https://www.gnu.org/software/bash/" title="Bash">[Bash]</a></li>
+<li><a href="https://www.mysql.com/" title="MySQL">[MySQL]</a></li>
+
+<h2>Core Files</h2>
+
+<ul>
+<li>- pads/bash/</li>
+  <ul>
+    <li>- brain</li>
+    <li>- functions.sh</li>
+    <li>- log_msg.sh</li>
+    <li>- response.sh</li>
+    <li>- software_install.sh</li>
+    <li>- styles.sh</li>
+  </ul>
+<li>- pads/conky/</li>
+<li>- pads/memory/logs/</li>
+<li>- pads/memory/profiles/</li>
+<li>- pads/memory/requirements/
+  <ul>
+    <li>- pads_requirements.txt</li>
+  </ul>
+<li>- pads/movies/</li>
+<li>- pads/music/</li>
+<li>- pads/pictures/</li>
+<li>- pads/python/</li>
+<li>- pads/websites/</li>
+  <ul>
+    <li>- accounting</li>
+  </ul>
+</ul>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+<h2 id="getting-started">Getting Started</h2>
+
+<p>
+This is an example of instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>
+If you are on Arch Linux, you can update first. The installer also updates before it installs anything.<br>
+  <code>sudo pacman -Syyu</code><br><br>
+
+If you are on Rasbian/Debian, you can update first. The installer also updates before it installs anything.<br>
+  <code>sudo apt-get update && sudo apt-get upgrade</code><br>
+</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>
+1. Clone the repo<br>
+   <code>git clone https://github.com/FrankWilson88/Project-PADS.git</code>
+</p> 
+<p>
+2. Open Directory you cloned the project to<br>
+   <code>cd path/to/Project-PADS</code>
+</p>
+<p>
+3. Source the installer, and let it do the rest.<br>
+   <code>source pads_1.0.0_installer</code>
+</p>
+<p>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+<h2 id="usage">Usage</h2>
+
+<pre>
+Usage: pads [-h|v|s|f] [ARG][ARG]
+Options:
+
+  -h                          Print the Usage and exit
+  -v                          Print the Version and exit
+  -s                          Install important Software and exit
+  -f    [name|help][port]     Run any function and exit
+  -g                          Play or list the games and exit
+
+Ex: pads -f help || pads -h || pads -f django testproject 8080
+</pre>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+<h2 id="roadmap">Roadmap</h2>
+<div class="roadmap">
+<ul>
+<li>[ ] E-commerce Website</li>
+  <ul>
+  <li>[ ] Private Messaging on website</li>
+  <li>[ ] POS Sales directly through website (not a third-party).</li>
+  <li>[x] Accounting Database</li>
+  </ul>
+<li>[ ] Bash Automation:</li>
+  <ul>
+    <li>[ ] Cross Compatable:</li>
+    <ul>
+      <li>[x] Manjaro</li>
+      <li>[x] Rasbian</li>
+      <li>[x] Debian</li>
+      <li>[ ] Windows</li>
+      <li>[ ] Mac OS</li>
+    </ul>
+    <li>[x] Update Machine</li>
+    <li>[x] Log IP's connected to Modem.</li>
+    <li>[x] History, Success, Error Logs.</li>
+    <li>[x] Notes Log</li>
+    <li>[x] Backup Program</li>
+    <li>[x] Create, Delete, Start Django Project including user.</li>
+    <li>[x] Conky Panels for Sys Info</li>
+    <li>[ ] GUI</li>
+  </ul>
+<li>[ ] Automate Customer Assistance:</li>
+  <ul>
+    <li>[ ] Speech Module</li>
+    <li>[ ] Machine Learning</li>
+    <li>[ ] Search Distributors to find best prices, and make purchase's when inventory is at a given level.</li>
+    <li>[ ] Possibly search the web for buyers to connect to sellers (Assist in sales).</li>
+  </ul>
+<li>[ ] Electron App</li>
+<li>[ ] Android App</li>
+<li>[ ] IOS App</li>
+</ul>
+</div>
+See the <a href="https://github.com/FrankWilson88/Project-PADS/issues" title-"Redirect to Github" target="_blank">[open issues]</a> for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+<h2 id="contributing">Contributing</h2>
+<p>
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+<br>
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+<br>
+<ol>
+<li>Fork the Project</li>
+<li>Create your Feature Branch (`git checkout -b feature/AmazingFeature`)</li>
+<li>Commit your Changes (`git commit -m 'Add some AmazingFeature'`)</li>
+<li>Push to the Branch (`git push origin feature/AmazingFeature`)</li>
+<li>Open a Pull Request</li>
+</ol>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+<h2 id="license">License</h2>
+<p>
+MIT License
+<br>
+Copyright (c) 2022 Joe Corso
+<br>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+<h2 id="contact">Contact</h2>
+<p>
+Joe Corso - <a href="mailto:wormholecontrolroom@gmail.com?subject="PADS Inquiry" title="Army Glass Email">wormholeControlRoom@gmail.com</a><br>
+Project Link: <a href="https://github.com/FrankWilson88/Project-PADS/)" title="Github Link" target="_blank">[https://github.com/FrankWilson88/Project-PADS/]</a>
+</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+<h2 id="acknowledgments">Acknowledgments</h2>
+<pre>
+* []()
+* []()
+* []()
+</pre>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}Inventory | Army Glass{% endblock %}
+
+{% block super %}
+<fieldset class="pc tablet mobile">
+    <legend>Raw Materials Sum</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Units In</th>
+            <th>Units Out</th>
+            <th>Units OH</th>
+            <th>Cost/Unit</th>
+            <th>Pcs In</th>
+            <th>Units/Pc</th>
+            <th>Units/Cs</th>
+            <th>Inches/Unit</th>
+            <th>Cost/Pc</th>
+            <th>Units</th>
+            <th>Waste</th>
+            <th>R & D</th>
+        </tr>
+        {% for x in rawmaterials %}
+        <tr>
+            <td>{{x.snid}} {{x.make}}, {{x.model}} {{x.diameter}}x{{x.thickness}}</td>
+            <td>${{x.annDebit}}</td>
+            <td>${{x.annCredit}}</td>
+            <td>{{x.unitsIn}}</td>
+            <td>{{x.unitsOut}}</td>
+            <td>{{x.unitsOH}}</td>
+            <td>${{x.costPerUnit}}</td>
+            <td>{{x.annPcsIn}}</td>
+            <td>{{x.unitsPerPc}}</td>
+            <td>{{x.unitsPerCs}}</td>
+            <td>{{x.inchesPerUnit}}</td>
+            <td>${{x.costPerPc}}</td>
+            <td>{{x.annUnits}}</td>
+            <td>{{x.annWaste}}</td>
+            <td>{{x.annRND}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td class="sum">${{aggDebit}}</td>
+            <td class="sum">${{aggCredit}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">{{aggUnits}}</td>
+            <td class="sum">{{aggWaste}}</td>
+            <td class="sum">{{aggRND}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Production Work Sum</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>In/Out</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>MSRP</th>
+            <th>Wholesale</th>
+            <th>Units In</th>
+            <th>Units Out</th>
+            <th>Units OH</th>
+            <th>Retail Value</th>
+        </tr>
+        {% for x in productionwork %}
+        <tr>
+            {% if x.annDebit == x.annCredit %}
+            <td><small>Out</small></td>
+            {% else %}
+            <td><small>In</small></td>
+            {% endif %}
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.annDebit}}</td>
+            <td>${{x.annCredit}}</td>
+            <td>${{x.msrp}}</td>
+            <td>${{x.wholesale}}</td>
+            <td>{{x.annUnitsIn}}</td>
+            <td>{{x.annUnitsOut}}</td>
+            <td>{{x.annUnitsOH}}</td>
+            <td>${{x.retailValue}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{pwDebit}}</td>
+            <td class="sum">${{pwCredit}}</td>
+            <td></td>
+            <td></td>
+            <td class="sum">{{pwUnitsIn}}</td>
+            <td class="sum">{{pwUnitsOut}}</td>
+            <td class="sum">{{pwUnitsOH}}</td>
+            <td class="sum">${{pwRetailValue}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+
+<fieldset class="pc tablet mobile">
+    <legend>Custom Work</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>SN ID</th>
+            <th>Timestamp</th>
+            <th>title</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>MGF. Date</th>
+            <th>Invoice ID</th>
+            <th>Customer ID</th>
+            <th>Employee ID</th>
+        </tr>
+        {% for cw in customwork %}
+        <tr>
+            <td>{{cw.snid}}</td>
+            <td>{{cw.timestamp}}</td>
+            <td>{{cw.title}}</td>
+            <td>{{cw.description}}</td>
+            <td>${{cw.debit}}</td>
+            <td>${{cw.credit}}</td>
+            <td>{{cw.pcId}}</td>
+            <td>{{cw.pcOut}}</td>
+            <td>{{cw.mfgDate}}</td>
+            <td>{{cw.invoiceID}}</td>
+            <td>{{cw.customerID}}</td>
+            <td>{{cw.employeeID}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Prototypes</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+        </tr>
+        {% for p in prototypes %}
+        <tr>
+            <td>{{p.snid}}</td>
+            <td>{{p.description}}</td>
+            <td>${{p.debit}}</td>
+            <td>${{p.credit}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Store Inventory</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>In/Out</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>MSRP</th>
+            <th>Units/Cs</th>
+            <th>Units In</th>
+            <th>Units Out</th>
+            <th>Units OH</th>
+            <th>Cost/Unit</th>
+        </tr>
+        {% for si in storeinventory %}
+        <tr>
+            {% if si.annDebit == si.annCredit %}
+            <td><small>Out</small></td>
+            {% else %}
+            <td><small>In</small></td>
+            {% endif %}
+            <td>{{si.snid}}</td>
+            <td>{{si.description}}</td>
+            <td>${{si.annDebit}}</td>
+            <td>${{si.annCredit}}</td>
+            <td>${{si.msrp}}</td>
+            <td>{{si.unitsPerCs}}</td>
+            <td>{{si.annUnitsIn}}</td>
+            <td>{{si.annUnitsOut}}</td>
+            <td>{{si.unitsOH}}</td>
+            <td>${{si.costPerUnit}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+{% endblock %}

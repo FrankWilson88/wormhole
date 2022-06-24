@@ -1,0 +1,73 @@
+<nav class="scaleNav">
+  {% if user.is_authenticated %}
+    <p>Hi, {{ user.username }}!</p>
+    {% block super %}
+      <div class="effect">
+        <a href="{% url 'admin:index' %}" title="Link to Backend" target="_blank">Admin</a>
+        <div class="beam"></div>
+      </div>
+      <div class="effect">
+        <a href="{% url 'logout' %}" title="Get the fuck outta heeeeeere">Log Out</a>
+        <div class="beam"></div>
+      </div>
+      <div class="dropdown">
+        <div class="effect">
+          <a href="#">Data</a>
+          <div class="beam"></div>
+        </div>
+        <div class="dropdownContent">
+          <div class="effect">
+            <a href="{% url 'inventory' %}" title="View your entire Inventory">Inventory</a>
+            <div class="beam"></div>
+          </div>
+          <div class="effect">
+            <a href="{% url 'ff' %}" title="View your equipment, etc.">F&F</a>
+            <div class="beam"></div>
+          </div>
+          <div class="effect">
+            <a href="{% url 'assets' %}" title="View your assets">Assets</a>
+            <div class="beam"></div>
+          </div>
+          <div class="effect">
+            <a href="{% url 'liabilities' %}" title="View your liabilities">Liabilities</a>
+            <div class="beam"></div>
+          </div>
+          <div class="effect">
+            <a href="{% url 'revexpoe' %}" title="View your Revenue, Expenses, and Owners Equity">RevExpOE</a>
+            <div class="beam"></div>
+          </div>
+          <div class="effect">
+            <a href="{% url 'reports' %}" title="View your Income Report, Statement of Owners Equity, and Balance Sheet">Reports</a>
+            <div class="beam"></div>
+          </div>
+          <div class="effect">
+            <a href="{% url 'admin:index' %}" target="_blank" title="Go to the backend">Admin</a>
+            <div class="beam"></div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+   {% else %}
+      <p>Logged Out</p>
+      <div class="effect">
+        <a href="{% url 'login' %}" title="Enter...if you dare.">Login</a>
+        <div class="beam"></div>
+      </div>
+  {% endif %}
+  <div class="effect">
+    <a href="{% url 'articles' %}" title="See current Articles">Articles</a>
+    <div class="beam"></div>
+  </div>
+  <div class="effect">
+    <a href="{% url 'shop' %}" title="See items for sale">Shop</a>
+    <div class="beam"></div>
+  </div>
+  <div class="effect">
+    <a href="{% url 'about' %}" title="Contact info, Terms of Service, Social Links, etc.">About</a>
+    <div class="beam"></div>
+  </div>
+  <div class="effect">
+    <a href="{% url 'index' %}" title="Back to the Main Page">Home</a>
+    <div class="beam"></div>
+  </div>
+</nav>

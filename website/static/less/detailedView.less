@@ -1,0 +1,76 @@
+.genericDetailedView{
+ small.detailedView{
+    width: 100%;
+    margin-bottom: 2%;
+		float: left;
+	}
+  small.detailedView a{
+ 		font-family: Cinzel;
+		font-variant: small-caps;	
+    font-size: 25px;
+    text-decoration: none;
+    margin-bottom: 2%;
+  }
+  small.detailedView a:nth-child(2):before{
+    content: " > ";
+  }
+  div.imgList img.highlight{
+      float: left;
+      clear: left;
+      width: 100%;
+      margin-top: 15%;
+      cursor: pointer;
+      box-shadow: none;
+  }
+  div.imgList img.highlight:hover{
+    animation: shadow 5s infinite;
+  }
+  @keyframes shadow{
+    from  {box-shadow: 2px 2px 2px black;}
+    12.5% {box-shadow: 2px 2px 5px black;}
+    25%   {box-shadow: 2px 2px 10px black;}
+    37.5% {box-shadow: 2px 2px 5px black;}
+    50%   {box-shadow: 2px 2px 2px black;}
+    62.5% {box-shadow: 2px 2px 5px black;}
+    75%   {box-shadow: 2px 2px 10px black;}
+    87.5% {box-shadow: 2px 2px 5px black;}
+    to    {box-shadow: 2px 2px 2px black}
+  }
+  
+  div.content{display: none;}
+	div.content img.imgView{
+    width: 100%;
+    margin-left: 2%;
+    float: left;  
+  } 
+	div.detailedView{
+    float: right;
+	}
+  .img-magnifier-container {
+    position: relative;
+  }
+  .img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
+  }
+	div.detailedView div.details{
+		width: 100%;
+		float: right;
+	}
+	div.detailedView div.details h2{
+		text-align: center;
+		width: 50%;
+		border: 2px solid black;
+		border-radius: 25px;
+		background: lightblue;
+	}
+	div.detailedView div.details h3{
+		margin: 0;
+		padding: 0;
+	}
+}

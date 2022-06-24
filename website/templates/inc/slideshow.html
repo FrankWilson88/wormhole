@@ -1,0 +1,88 @@
+<style>
+.slideshow a{
+  color: black;
+  margin: 0 2%;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 1s;
+}
+.slideshow a:hover{transform: scale(2, 1);}
+.slideshow{
+  color: white;
+  font-family: Zen Kurenaido;
+  width: 100%;
+  text-align: center;
+}
+.slideshow .slide img{
+  width: 100%;
+  height: 25em;
+  padding: 15px;
+}
+.slide{transition: box-shadow .5s;}
+.slide:hover{
+  box-shadow: 5px 5px 5px white;
+}
+.slideNumber{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  display: inline;
+}
+.itemName{
+  position: relative;
+  bottom: 75px;
+  font-size: 35px;
+}
+.itemName:hover{color: blue;}
+.itemName:active{color:red;}
+.dotWrapper{
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+.dot{
+  border-radius: 50px;
+  height: 25px;
+  width: 25px;
+}
+</style>
+
+<div class="slideshow">
+  {% for p in prodo  %}
+  	<div class="slide">
+  		<div class="slideNumber">{{ p.snid }}</div>
+ 			<img src="{{ p.image.url }}">
+      <a href="/prodo/{{ p.snid }}" class="itemName" title="Click for Details and Purchase">{{ p.model }}</a>
+		</div>
+	{% endfor %}
+
+  <div class="dotWrapper">
+    {% for p in prodo  %}
+    	<span class="dot"></span>
+		{% endfor %}
+	</div>
+</div>
+
+<script>
+//Slideshow Settings
+var slideIndex = 0;
+slideshow();
+function slideshow(){
+  var slides = document.getElementsByClassName("slide");
+  var dots = document.getElementsByClassName("dot");
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (var i = 0; i < dots.length; i++) {
+    dots[i].style.display = "inline-block";
+    dots[i].style.background = "grey";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length){slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].style.background = "black";
+  setTimeout(slideshow, 5000);
+}
+console.log("Slideshow Feature is Loaded")
+</script>

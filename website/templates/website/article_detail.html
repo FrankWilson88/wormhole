@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+{% block title %}{{ object.title }} | Wormhole Enterprise{% endblock %}
+
+{% block content %}
+  <article class="detailedView">
+    <section class="col-9 col-s-6">
+    <a href="javascript:history.back()">Go Back</a>
+    <h2>{{ object.title }}</h2>
+    <small>Created by {{ object.createdBy }} @ {{ object.createdOn }}</small>
+    <p>{{ object.content }}</p>
+    </section>
+    <aside class="col-3 col-s-6">
+    {% if object.img1 %}<img src="{{ object.img1.url }}" alt="1st Pic">{% else %}{% endif %}
+    {% if object.img2 %}<img src="{{ object.img2.url }}" alt="2nd Pic">{% else %}{% endif %}
+    {% if object.img3 %}<img src="{{ object.img3.url }}" alt="3rd Pic">{% else %}{% endif %}
+    {% if object.img4 %}<img src="{{ object.img4.url }}" alt="4th Pic">{% else %}{% endif %}
+    {% if object.img5 %}<img src="{{ object.img5.url }}" alt="5th Pic">{% else %}{% endif %}
+    </aside>
+  </article>
+{% endblock %}

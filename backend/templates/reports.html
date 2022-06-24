@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}Reports | Army Glass{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block super %}
+<fieldset class="col-5 col-s-5 pc tablet mobile">
+    <legend>Income Statement | Yr. End {{year}}</legend>
+    <table class="report">
+      <tr>
+            <th>Sales Revenue</th>
+            <td>${{salesRev}}</td>
+      </tr>
+      <tr>
+            <th></th>
+            <td class="sum">${{salesRev}}</td>
+      </tr>
+      <tr>
+            <th>Rent Expense</th>
+            <td>${{reDebit}}</td>
+      </tr>
+      <tr>
+            <th>Building</th>
+            <td>${{bCredit}}</td>
+      </tr>
+      <tr>
+            <th>Building Improvements</th>
+            <td>${{biCredit}}</td>
+      </tr>
+      <tr>
+            <th>Furniture & Fixtures</th>
+            <td>${{ffCredit}}</td>
+      </tr>
+      <tr>
+            <th>Cost Of Goods Sold</th>
+            <td>${{cogs}}</td>      
+      </tr>
+      <tr>
+            <th>Research & Developements</th>
+            <td>${{aggrndDR}}</td>
+      </tr>
+      <tr>
+            <th>Salary Expense</th>
+            <td>${{salexpDebit}}</td>      
+      </tr>
+      <tr>
+            <th>Supplies Expense</th>
+            <td>${{supexDebit}}</td>      
+      </tr>
+      <tr>
+            <th>Utilities Expense</th>
+            <td>${{ueDebit}}</td>      
+      </tr>
+      <tr>
+            <th>Travel Expense</th>
+            <td>${{teDebit}}</td>                  
+      </tr>
+      <tr>
+            <th>Delivery Expense</th>
+            <td>${{deDebit}}</td>      
+      </tr>
+      <tr>
+            <th>Total Expenses</th>
+            <td class="sum">${{totalExp}}</td>      
+      </tr>
+      <tr>
+            <th>Net Income/Loss</th>
+            <td class="sum">${{incomeloss}}</td>
+      </tr>
+    </table>
+</fieldset>
+
+<fieldset class="col-5 col-s-5 pc tablet mobile">
+    <legend>Statement of Owners Equity | Yr. End {{year}}</legend>
+    <table class="report">
+      <tr>
+            <th>Capital</th>
+            <td>${{cDebit}}</td>
+      </tr>
+      <tr>
+            <th>Net Income/Loss</th>
+            <td>${{incomeloss}}</td>
+      </tr>
+      <tr>
+            <th>Total</th>
+            <td class="sum">${{total}}</td>      
+      </tr>
+      <tr>
+            <th>Drawings</th>
+            <td>${{dDebit}}</td>      
+      </tr>
+      <tr>
+            <th>Army Glass, Capital</th>
+            <td class="sum">${{agCap}}</td>
+      </tr>
+    </table>
+</fieldset>
+
+<fieldset class="col-10 col-s-10 pc tablet mobile">
+    <legend>Balance Sheet | Yr. End {{year}}</legend>
+    <table class="assets report">
+    <h1>Assets:</h1>
+      <tr>
+            <th>Cash</th>
+            <td>${{cashDif}}</td>
+      </tr>
+      <tr>
+            <th>Accounts Recievable</th>
+            <td>${{araggDif}}</td>
+      </tr>
+      <tr>
+            <th>Inventory</th>
+            <td>${{invDif}}</td>      
+      </tr>
+      <tr>
+            <th>Building</th>
+            <td>${{bDebit}}</td>      
+      </tr>
+      <tr>
+            <th>Building: Depreciation</th>
+            <td>${{bCredit}}</td>
+            <td class="sum">${{bDif}}</td>   
+      </tr>
+      <tr>
+            <th>Building Improvements</th>
+            <td>${{biDebit}}</td>      
+      </tr>
+      <tr>
+            <th>Building Improvements: Depreciation</th>
+            <td>${{biCredit}}</td>
+            <td class="sum">${{biDif}}</td>  
+      </tr>
+      <tr>
+            <th>Land Improvements</th>
+            <td>${{liDebit}}</td>      
+      </tr>
+      <tr>
+            <th>Furniture & Fixtures</th>
+            <td>${{ffDebit}}</td>
+      </tr>
+      <tr>
+            <th>Furniture & Fixtures: Depreciation</th>
+            <td>${{ffCredit}}</td>
+            <td>${{ffDif}}</td>
+      </tr>
+      <tr>
+            <th>Total Assets</th>
+            <td class="sum">${{totalassets}}</td>
+      </tr>
+    </table>
+    
+    <table class="liab report">
+        <h1>Liabilities:</h1>
+        <tr>
+            <th>Accounts Payable</th>
+            <td>${{apDif}}</td>            
+        </tr>
+        <tr>
+            <th>Unearned Sales Revenue</th>
+            <td>${{usrDif}}</td>        
+        </tr>
+        <tr>
+            <th>Allowance for Doubtful Accounts</th>
+            <td>${{adaDif}}</td>        
+        </tr>
+        <tr>
+            <th>Total Liabilities</th>
+            <td class="sum">${{totalLiab}}</td>
+        </tr>    
+    </table>
+    
+    <table class="oe report">
+        <h1>Owners Equity:</h1>
+        <tr>
+            <th>AG, Capital</th>
+            <td>${{agCap}}</td>        
+        </tr>
+        <tr>
+            <th>Total Liabilities & Owners Equity</th>
+            <td class="sum">${{totalLiabOE}}</td>        
+        </tr>
+    </table>
+</fieldset>
+{% endblock %}

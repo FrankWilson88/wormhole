@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block description %}Welcome to the Wonderful World of Wormhole Enterprise! Because who else is going to get rid of those empty beer cans? The recycling company?!{% endblock %}
+{% block keywords %}Wormhole, 3d printing, graphic art, problem solver, custom{% endblock %}
+{% block title %}Home | Wormhole Enterprise{% endblock %}
+
+{% block content %}
+<h1 class="title">Welcome to the Wonderful World of Wormhole Enterprise!</h1>
+
+<article>
+
+<section class="col-6 col-s-6">
+  <h3>Product Catalog:</h3>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo</p>
+</section>
+
+<aside class="col-6 col-s-6">
+  {% include 'inc/slideshow.html' %}
+</aside>
+
+<aside class="col-5 col-s-5">
+  <!-- Add a placeholder for the Twitch embed -->
+  <div id="twitch-playlist"></div>
+
+  <!-- Load the Twitch embed script -->
+  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+  <!-- Create a Twitch.Player object. This will render within the placeholder div -->
+  <script type="text/javascript">
+    new Twitch.Player("twitch-playlist", {
+      width: 450,
+      height: 180,
+      collection: "4dQskRqc9BbPog",
+      video: "videoId"
+    });
+  </script>
+</aside>
+
+
+<section class="col-6 col-s-6">
+  <h3>Video Title:</h3>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo</p>
+</section>
+
+<div class="col-12 col-s-12">
+<section class="col-5 col-s-5">
+  <h3>Live Feed</h3>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo</p>
+</section>
+
+<aside class="col-5 col-s-5">
+    <!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
+
+    <!-- Load the Twitch embed JavaScript file -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 450,
+        height: 280,
+        channel: "armyglass",
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["embed.example.com", "othersite.example.com"]
+      });
+    </script>
+</aside>
+
+</div>
+</article>
+
+{% endblock %}

@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}Assets | Army Glass{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block super %}
+<fieldset class="pc tablet mobile">
+    <legend>Accounts Receivable</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Value Loaned</th>
+            <th>Value Payed</th>
+            <th>Units Loaned</th>
+            <th>Default</th>
+            <th>Date Opened</th>
+            <th>Date Closed</th>
+            <th>Due Date</th>
+            <th>Customer ID</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for ar in accountsreceivable %}
+        <tr>
+            <td>{{ar.timestamp}}</td>
+            <td>{{ar.snid}}</td>
+            <td>{{ar.description}}</td>
+            <td>${{ar.valueLoaned}}</td>
+            <td>${{ar.valuePayed}}</td>
+            <td>{{ar.unitsLoaned}}</td>
+            <td>${{ar.default}}</td>
+            <td>{{ar.dateOpened}}</td>
+            <td>{{ar.dateClosed}}</td>
+            <td>{{ar.dueDate}}</td>
+            <td>{{ar.customerID}}</td>
+            <td>{{ar.recieptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{arSum.aggDebit}}</td>
+            <td class="sum">${{arSum.aggCredit}}</td>
+            <td class="sum">{{arSum.units}}</td>
+            <td class="sum">${{arSum.aggDif}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Inventory</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Dif</th>
+        </tr>
+        <tr>
+            <td>${{iDebit}}</td>
+            <td>${{iCredit}}</td>
+            <td>${{iDif}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Building</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Purchase Date</th>
+            <th>Depreciation Life(Y)</th>
+            <th>Depreciation Cost(Y)</th>
+            <th>Depreciation(Y)</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for b in bSum %}
+        <tr>
+            <td>{{b.timestamp}}</td>
+            <td>{{b.snid}}</td>
+            <td>{{b.description}}</td>
+            <td>${{b.debit}}</td>
+            <td>${{b.credit}}</td>
+            <td>{{b.purchaseDate}}</td>
+            <td>{{b.depreciationLife}}</td>
+            <td>${{b.depreciationCost}}</td>
+            <td>{{b.depreciation}}</td>
+            <td>{{b.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{aggDebit}}</td>
+            <td class="sum">${{aggCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Building Improvements</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Purchase Date</th>
+            <th>Depreciation Life(Y)</th>
+            <th>Depreciation Cost(Y)</th>
+            <th>Depreciation(Y)</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for b in biSum %}
+        <tr>
+            <td>{{b.timestamp}}</td>
+            <td>{{b.snid}}</td>
+            <td>{{b.description}}</td>
+            <td>${{b.debit}}</td>
+            <td>${{b.credit}}</td>
+            <td>{{b.purchaseDate}}</td>
+            <td>{{b.depreciationLife}}</td>
+            <td>${{b.biDepCost}}</td>
+            <td>{{b.depreciation}}</td>
+            <td>{{b.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{biDebit}}</td>
+            <td class="sum">${{biCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Land Improvements</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Purchase Date</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in li %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.purchaseDate}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{liDebit}}</td>
+            <td class="sum">${{liCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Furniture & Fixtures</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Dif</th>
+        </tr>
+        <tr>
+            <td>${{ffDebit}}</td>
+            <td>${{ffCredit}}</td>
+            <td>${{ffDif}}</td>
+        </tr>
+    </table>
+</fieldset>
+{% endblock %}

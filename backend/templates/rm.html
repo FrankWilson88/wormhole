@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}Raw Materials|Army Glass{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block super %}
+{{test}}
+{{test1}}
+
+<fieldset class="pc tablet mobile">
+    <legend>Raw Materials</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>SN ID</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Inches/Unit</th>
+            <th>Pcs./Cs.</th>
+            <th>Inches/Pc.</th>
+        </tr>
+        {% for rm in rawmaterials %}
+        <tr>
+            <td>{{rm.snid}}</td>
+            <td>{{rm.category}}</td>
+            <td>{{rm.make}}, {{rm.model}} {{rm.diameter}}x{{rm.thickness}}</td>
+            <td>{{rm.inchesPerUnit}}</td>
+            <td>{{rm.pcsPerCs}}</td>
+            <td>{{rm.inchesPerPc}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Raw Materials In</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Pcs. In</th>
+            <th>Invoice ID</th>
+            <th>Purchase Date</th>
+        </tr>
+        {% for rm in rmin %}
+        <tr>
+            <td>{{rm.timestamp}}</td>
+            <td>{{rm.description}}</td>
+            <td>{{rm.debit}}</td>
+            <td>{{rm.pcsIn}}</td>
+            <td>{{rm.invoiceID}}</td>
+            <td>{{rm.purchaseDate}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="sum">${{aggDebit}}</td>
+            <td class="sum">{{aggPcsIn}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Raw Materials Out</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>Description</th>
+            <th>Units</th>
+            <th>Waste</th>
+            <th>R & D</th>
+        </tr>
+        {% for rm in rmout %}
+        <tr>
+            <td>{{rm.timestamp}}</td>
+            <td>{{rm.description}}</td>
+            <td>{{rm.units}}</td>
+            <td>{{rm.waste}}</td>
+            <td>{{rm.rnd}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="sum">{{aggUnits}}</td>
+            <td class="sum">{{aggWaste}}</td>
+            <td class="sum">{{aggRND}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Raw Materials Sum</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>In/Out</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Units In</th>
+            <th>Units Out</th>
+            <th>Units OH</th>
+            <th>Cost/Unit</th>
+            <th>Pcs In</th>
+            <th>Units/Pc</th>
+            <th>Units/Cs</th>
+            <th>Inches/Unit</th>
+            <th>Cost/Pc</th>
+            <th>Units</th>
+            <th>Waste</th>
+            <th>R & D</th>
+        </tr>
+        {% for x in sum %}
+        <tr>
+            {% if debit == credit %}
+                <td><small>Out</small></td>
+            {% else %}
+                <td><small>In</small></td>
+            {% endif %}
+            <td>{{x.snid}} {{x.make}}, {{x.model}} {{x.diameter}}x{{x.thickness}}</td>
+            <td>${{x.annDebit}}</td>
+            <td>${{x.annCredit}}</td>
+            <td>{{x.unitsIn}}</td>
+            <td>{{x.unitsOut}}</td>
+            <td>{{x.unitsOH}}</td>
+            <td>${{x.costPerUnit}}</td>
+            <td>{{x.annPcsIn}}</td>
+            <td>{{x.unitsPerPc}}</td>
+            <td>{{x.unitsPerCs}}</td>
+            <td>{{x.inchesPerUnit}}</td>
+            <td>${{x.costPerPc}}</td>
+            <td>{{x.annUnits}}</td>
+            <td>{{x.annWaste}}</td>
+            <td>{{x.annRND}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td class="sum">${{aggDebit}}</td>
+            <td class="sum">${{aggCredit}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">{{aggUnits}}</td>
+            <td class="sum">{{aggWaste}}</td>
+            <td class="sum">{{aggRND}}</td>
+        </tr>
+    </table>
+</fieldset>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}e-commerce, handmade, glassblowing, art, artist, manufacturing, vateran, veteran owned{% endblock %}
+{% block description %}You can find my contact information, and Social Media links from this page. You can find my full catalog of artwork on the Home page.{% endblock %}
+{% block title %}Prodo List | Army Glass{% endblock %}
+
+{% block content %}
+		<div class="col-4 col-s-4 col-m-12">
+			<h1>Custom Work</h1>
+			{% for c in object_list %}
+			<div class="item">
+				<img src="{{ c.image.url }}">
+				<p><br>{{ c.title }}</p>
+				<a href="{{ c.snid }}">Details</a>
+			</div>
+			{% empty %}
+				<p>There are no Custom Pieces in the Catalog.</p>
+			{% endfor %}
+		</div>
+{% endblock %}

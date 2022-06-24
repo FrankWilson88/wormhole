@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}Furniture & Fixtures | Army Glass{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block super %}
+<fieldset class="pc tablet mobile">
+    <legend>Furniture & Fixtures</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Dif</th>
+        </tr>
+        <tr>
+            <td>${{ffDebit}}</td>
+            <td>${{ffCredit}}</td>
+            <td>${{ffDif}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Computer Equipment</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Depreciation Life</th>
+            <th>Depreciation Cost(Y)</th>
+            <th>Purchase Date</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in ceSum %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.depreciationLife}}</td>
+            <td>${{x.ceDepCost}}</td>
+            <td>{{x.purchaseDate}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{ceDebit}}</td>
+            <td class="sum">${{ceCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Store Equipment</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Depreciation Life</th>
+            <th>Depreciation Cost(Y)</th>
+            <th>Purchase Date</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in seSum %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.depreciationLife}}</td>
+            <td>${{x.seDepCost}}</td>
+            <td>{{x.purchaseDate}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{seDebit}}</td>
+            <td class="sum">${{seCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Machinery & Equipment</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Depreciation Life</th>
+            <th>Depreciation Cost(Y)</th>
+            <th>Purchase Date</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in meSum %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.depreciationLife}}</td>
+            <td>${{x.meDepCost}}</td>
+            <td>{{x.purchaseDate}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{meDebit}}</td>
+            <td class="sum">${{meCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Office Equipment</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Depreciation Life</th>
+            <th>Depreciation Cost(Y)</th>
+            <th>Purchase Date</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in oeSum %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.depreciationLife}}</td>
+            <td>${{x.oeDepCost}}</td>
+            <td>{{x.purchaseDate}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{oeDebit}}</td>
+            <td class="sum">${{oeCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Shop Equipment</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Depreciation Life</th>
+            <th>Depreciation Cost(Y)</th>
+            <th>Purchase Date</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in sheSum %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.depreciationLife}}</td>
+            <td>${{x.sheDepCost}}</td>
+            <td>{{x.purchaseDate}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{sheDebit}}</td>
+            <td class="sum">${{sheCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+{% endblock %}

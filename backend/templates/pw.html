@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}Production Work|Army Glass{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block super %}
+<fieldset class="pc tablet mobile">
+    <legend>Production Work</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>MSRP</th>
+            <th>Wholesale</th>
+            <th>Inches/Unit</th>
+        </tr>
+        {% for pw in productionwork %}
+        <tr>
+            <td>{{pw.snid}}</td>
+            <td>{{pw.description}}</td>
+            <td>${{pw.msrp}}</td>
+            <td>${{pw.wholesale}}</td>
+            <td>{{pw.inchesPerUnit}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Production Work In</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>SN ID</th>
+            <th>Timestamp</th>
+            <th>Units In</th>
+        </tr>
+        {% for pw in pwIn %}
+        <tr>
+            <td>{{pw.snid}}</td>
+            <td>{{pw.timestamp}}</td>
+            <td>{{pw.unitsIn}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Production Work Out</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>SN ID</th>
+            <th>Timestamp</th>
+            <th>Units Out</th>
+        </tr>
+        {% for pw in pwOut %}
+        <tr>
+            <td>{{pw.snid}}</td>
+            <td>{{pw.timestamp}}</td>
+            <td>{{pw.unitsOut}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Production Work Sum</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>In/Out</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>MSRP</th>
+            <th>Wholesale</th>
+            <th>Units In</th>
+            <th>Units Out</th>
+            <th>Units OH</th>
+            <th>Retail Value</th>
+        </tr>
+        {% for x in sum %}
+        <tr>
+            {% if x.annDebit == x.annCredit %}
+                <td><small>Out</small></td>
+            {% else %}
+                <td><small>In</small></td>
+            {% endif %}
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.annDebit}}</td>
+            <td>${{x.annCredit}}</td>
+            <td>${{x.msrp}}</td>
+            <td>${{x.wholesale}}</td>
+            <td>{{x.annUnitsIn}}</td>
+            <td>{{x.annUnitsOut}}</td>
+            <td>{{x.annUnitsOH}}</td>
+            <td>${{x.retailValue}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{aggDebit}}</td>
+            <td class="sum">${{aggCredit}}</td>
+            <td></td>
+            <td></td>
+            <td class="sum">{{aggUnitsIn}}</td>
+            <td class="sum">{{aggUnitsOut}}</td>
+            <td class="sum">{{aggUnitsOH}}</td>
+            <td class="sum">${{aggRetailValue}}</td>
+        </tr>
+    </table>
+</fieldset>
+{% endblock %}

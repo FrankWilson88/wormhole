@@ -1,0 +1,312 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}Rev, Exp, OE | Army Glass{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block super %}
+<fieldset class="pc tablet mobile">
+    <legend>Revenue</legend>
+<fieldset class="pc tablet mobile">
+    <legend>Sales Revenue</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Sale Date</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Customer ID</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in sr %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>{{x.saleDate}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.customerID}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{srDebit}}</td>
+            <td class="sum">${{srCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Expenses</legend>
+
+<fieldset class="pc tablet mobile">
+    <legend>Salary Expense</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>SNID</th>
+            <th>Full Name</th>
+            <th>Pay/Hour</th>
+            <th>Total Hours</th>
+            <th>Debit</th>
+            <th>Credit</th>
+        </tr>
+        {% for x in salexp %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.fullname}}</td>
+            <td>${{x.payPerHour}}</td>
+            <td>${{x.totalHours}}</td>
+            <td>{{x.debit}}</td>
+            <td>{{x.credit}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{salexpDebit}}</td>
+            <td class="sum">${{salexpCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Rent Expense</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Pay Date</th>
+            <th>Customer ID</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in re %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.payDate}}</td>
+            <td>{{x.customerID}}</td>
+            <td>{{x.receiptID}}</td>
+            <td>{{x.accountID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{reDebit}}</td>
+            <td class="sum">${{reCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Supplies Expense</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Purchase Date</th>
+            <th>Customer ID</th>
+            <th>Receipt ID</th>
+            <th>Account ID</th>
+        </tr>
+        {% for x in supex %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.purchaseDate}}</td>
+            <td>{{x.customerID}}</td>
+            <td>{{x.receiptID}}</td>
+            <td>{{x.accountID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{supexDebit}}</td>
+            <td class="sum">${{supexCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Utilities Expense</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Bill Date</th>
+            <th>Due Date</th>
+            <th>Customer ID</th>
+            <th>Receipt ID</th>
+            <th>Account ID</th>
+        </tr>
+        {% for x in ue %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.billDate}}</td>
+            <td>{{x.dueDate}}</td>
+            <td>{{x.customerID}}</td>
+            <td>{{x.receiptID}}</td>
+            <td>{{x.accountID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{ueDebit}}</td>
+            <td class="sum">${{ueCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Travel Expense</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Purchase Date</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Customer ID</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in te %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>{{x.purchaseDate}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.customerID}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{teDebit}}</td>
+            <td class="sum">${{teCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Owners Equity</legend>
+
+<fieldset class="pc tablet mobile">
+    <legend>Capital</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Transaction Date</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Customer ID</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in c %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>{{x.transactionDate}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.customerID}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{cDebit}}</td>
+            <td class="sum">${{cCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset class="pc tablet mobile">
+    <legend>Drawings</legend>
+    <table class="col-10 col-s-10 data">
+        <tr>
+            <th>Timestamp</th>
+            <th>SN ID</th>
+            <th>Description</th>
+            <th>Transaction Date</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Customer ID</th>
+            <th>Receipt ID</th>
+        </tr>
+        {% for x in d %}
+        <tr>
+            <td>{{x.timestamp}}</td>
+            <td>{{x.snid}}</td>
+            <td>{{x.description}}</td>
+            <td>{{x.transactionDate}}</td>
+            <td>${{x.debit}}</td>
+            <td>${{x.credit}}</td>
+            <td>{{x.customerID}}</td>
+            <td>{{x.receiptID}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sum">${{dDebit}}</td>
+            <td class="sum">${{dCredit}}</td>
+        </tr>
+    </table>
+</fieldset>
+
+</fieldset>
+{% endblock %}

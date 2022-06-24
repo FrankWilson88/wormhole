@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+{% block title %}About | Wormhole Enterprise{% endblock %}
+
+{% block content %}
+  <h1 class="title">Let us Introduce Ourselves!</h1>
+  <article class="about">
+
+    <section class="profileCard col-4 col-s-4">
+      <img src="{% static 'img/wormholeLogo.png' %}">
+      <h3>Name</h3>
+      <nav>
+        <a href="#"><img src="{% static '/img/smLink/fb.png' %}"></a>
+        <a href="#"><img src="{% static '/img/smLink/ig.png' %}"></a>
+        <a href="#"><img src="{% static '/img/smLink/email.png' %}"></a>
+      </nav>      
+      <p>Info about me!<br>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
+
+    <section class="profileCard col-4 col-s-4">
+      <img src="{% static 'img/wormholeLogo.png' %}">
+      <h3>Name</h3>
+      <nav>
+        <a href="#"><img src="{% static '/img/smLink/fb.png' %}"></a>
+        <a href="#"><img src="{% static '/img/smLink/ig.png' %}"></a>
+        <a href="#"><img src="{% static '/img/smLink/email.png' %}"></a>
+      </nav>
+      <p>Info about me!<br>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
+
+    <section class="col-8 col-s-6">
+      <h2>Current Projects:</h2>
+      <nav class="scaleNavSub">
+        <div class="effect">
+          <a href="{% url 'pads' %}" title="Documentation Page">Project PADS</a>
+          <div class="beam"></div>
+        </div>
+        <div class="effect">
+          <a href="{% url 'pads' %}" title="Documentation Page">Next Project</a>
+          <div class="beam"></div>
+        </div>
+        <div class="effect">
+          <a href="{% url 'pads' %}" title="Documentation Page">Another Project</a>
+          <div class="beam"></div>
+        </div>
+        <div class="effect">
+          <a href="{% url 'pads' %}" title="Documentation Page">Operation: Winback</a>
+          <div class="beam"></div>
+        </div>
+        <div class="effect">
+          <a href="{% url 'pads' %}" title="Documentation Page">Operation: Bald Eagle</a>
+          <div class="beam"></div>
+        </div>
+        <div class="effect">
+          <a href="{% url 'pads' %}" title="Documentation Page">Project Makeshift</a>
+          <div class="beam"></div>
+        </div>
+        <div class="effect">
+          <a href="{% url 'pads' %}" title="Documentation Page">Project Hasbeen</a>
+          <div class="beam"></div>
+        </div>
+      </nav>
+    </section>
+
+    <section class="col-4 col-s-6">
+      <h2>Project Details:</h2>
+      <p>
+        The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      </p>
+    </section>
+
+    <section class="col-6 col-s-6">
+      <h2>Our Story!</h2>
+      <p>
+        The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      </p>
+    </section>
+
+    <aside class="col-6 col-s-6">
+      <div class="polaroid"><div class="polaroidBackground"><img src="{% static 'img/wormholeLogo.png' %}"></div></div>
+      <div class="polaroid2"><div class="polaroidBackground"><img src="{% static 'img/wormholeLogo.png' %}"></div></div>
+    </aside>
+
+    <aside class="col-6 col-s-6">
+      <div class="polaroid"><div class="polaroidBackground"><img src="{% static 'img/wormholeLogo.png' %}"></div></div>
+      <div class="polaroid2"><div class="polaroidBackground"><img src="{% static 'img/wormholeLogo.png' %}"></div></div>
+    </aside>
+
+    <section class="col-6 col-s-6">
+      <h2>Our Products:</h2>
+      <p>
+        The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      </p>
+    </section>
+
+    <section class="col-12 col-s-12">
+      <h2>Shipping Info:</h2>
+      <p>
+        The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      </p>
+    </section> 
+
+    <section class="col-12 col-s-12">
+      <h2>Return Policy:</h2>
+      <p>
+        The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      </p>
+    </section> 
+
+    <section class="col-12 col-s-12">
+      <h2>Terms of Service:</h2>
+      <p>
+        The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      </p>
+    </section> 
+
+  </article>
+
+
+{% endblock %}

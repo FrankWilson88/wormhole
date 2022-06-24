@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Joe Corso">
+  <meta name="description" content="{% block description %}{% endblock %}">
+  <meta name="keywords" content="{% block keywords %}{% endblock %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?{% now 'U' %}">
+  <link rel="icon" href="{% static 'img/wormholeLogo.png' %}" type="image/x-icon">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body class="row">
+  <header></header>
+
+  {% include 'inc/scaleNav.html' %}
+
+  {% block content %}{% endblock %}
+
+  {% if user.is_authenticate %}
+    {% block super %}{% endblock %}
+  {% endif %}
+
+  <footer class="col-12 col-s-12">
+    <div id="clock">clock error</div>
+    <small>
+      Copyright &copy; <a href="https://www.wormhole.click">Wormhole Enterprise </a><div id ="copyright"></div><br>
+  		<a href="https://www.flaticon.com/free-icons/ui" target="_blank" title="ui icons">Ui icons created by IYAHICON - Flaticon</a>
+    </small>
+  </footer>
+  <script src="{% static 'js/clock.js' %}"></script>
+  <script src="{% static 'js/tab.js' %}"></script>
+  <script src="{% static 'js/magnifyImg.js' %}"></script>
+</body>
+</html>

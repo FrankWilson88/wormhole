@@ -1,0 +1,61 @@
+/*Nav Dropdown for Superuser*/
+nav .dropdown{position: relative; display: inline-block;}
+nav .dropdown div.dropdownContent{
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin: 0px 0px;
+  z-index: 1;
+  position: absolute;
+  top: 50px;
+}
+nav .dropdown:hover div.dropdownContent{
+  display: block;
+}
+nav .dropdown div.dropdownContent li{
+  list-style: none;
+  cursor: pointer;
+}
+
+/*Reports Styles*/
+fieldset.pc table.data{
+  text-align: center;
+  width: 100%;
+}
+fieldset.pc table.data th{
+  padding-bottom: .5em;
+  border-bottom: 2px solid white;
+}
+fieldset.pc table.data td.sum{border-top: 2px solid white;}
+fieldset.pc table.report{
+  width: 100%;
+  text-align: left;
+}
+fieldset.pc table.report th{
+  padding-bottom: .5em;
+  width: 50%;
+}
+fieldset.pc table.report td{
+  width: 50%;
+  float: left;
+}
+fieldset.pc table.report td.sum{
+  border-top: 2px solid white; 
+  width: 50%; 
+  float: right;
+}
+fieldset.pc table.assets{
+  width: 50%;
+  text-align: left;
+  float: left;
+}
+fieldset.pc table.liab{
+  width: 50%;
+  text-align: left;
+  float: right;
+}
+fieldset.pc table.oe{
+  width: 50%;
+  text-align: left;
+  float: right;
+}

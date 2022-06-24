@@ -1,0 +1,51 @@
+.pcArticles(){
+  body div.preview{/* Generic Main Content Layout */
+    height: 200px;
+    small{padding: 0 5%; float: left; clear: left;}
+    p{
+      text-overflow: ellipsis;
+      overflow: hidden; 
+      width: 350px; 
+      height: 7.9em; 
+      white-space: normal;
+      display: block;
+    }
+    h2{
+      padding: 0 5%;
+      float: left;
+      a{text-decoration: none; color: blue;}
+      a:hover{color: green;}
+      a:active{color: red;}
+    }
+    img{
+      padding-bottom: 5%;
+      height: 150px;
+      width: 150px;
+    }
+  }
+  div.preview:hover{animation: articleeffect forwards 0.5s;}
+  @keyframes articleeffect{
+    from{}
+    to{
+      border-radius: 25px;
+      box-shadow: 5px 5px 5px black;
+    }
+  }
+}
+
+.pcArticleDetailed(){
+  article.detailedView{
+    margin: 5%;
+    a{text-decoration: none; color: blue;}
+    a:hover{color: green;}
+    a:active{color: red;}
+    section{box-shadow: 5px 5px 5px black;}
+    aside{
+      img{
+        height: 50%;
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block keywords %}{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}Item Detailed View | Army Glass{% endblock %}
+
+{% block content %}
+
+
+ 	<small class="detailedView"><a href="{% url 'index' %}" title="Back to Store">Store</a><a href="/prodo/{{ object.snid }}" title="This Page">{{ object.model }}</a></small>
+	<div class="imgList col-1 col-s-1">
+    	<img src="{{ object.image.url }}" onclick="tab('image', this)" class="highlight btn" id="default">
+    	<img src="{{ object.image2.url }}" onclick="tab('image2', this)" class="highlight btn">
+    	<img src="{{ object.image3.url }}" onclick="tab('image3', this)" class="highlight btn">
+    	<img src="{{ object.image4.url }}" onclick="tab('image4', this)" class="highlight btn">
+    	<img src="{{ object.image5.url }}" onclick="tab('image5', this)" class="highlight btn">
+  	</div>
+  	<div id="image" class="content img-magnifier-container col-5 col-s-5">
+		<img class="imgView" id="magnify" src="{{ object.image.url }}" width="600" height="400">
+	</div>  
+  	<div id="image2" class="content img-magnifier-container col-5 col-s-5">
+		<img class="imgView" id="magnify2" src="{{ object.image2.url }}" width="600" height="400">
+	</div>  
+  	<div id="image3" class="content img-magnifier-container col-5 col-s-5">
+		<img class="imgView" id="magnify3" src="{{ object.image3.url }}" width="600" height="400">
+	</div>  
+  	<div id="image4" class="content img-magnifier-container col-5 col-s-5">
+		<img class="imgView" id="magnify4" src="{{ object.image4.url }}" width="600" height="400">
+	</div>  
+	  <div id="image5" class="content img-magnifier-container col-5 col-s-5">
+		<img class="imgView" id="magnify5" src="{{ object.image5.url }}" width="600" height="400">
+	</div>  
+
+	<div class="detailedView col-6 col-s-6">
+  		<div class="details">
+  			<h1>{{ object.model }}</h1>
+  			<h2><a href="{{ object.squareLink }}" target="_blank">Checkout ${{ object.msrp }}</a></h2>
+  			<p><h3><strong>Description:</strong></h3> {{ object.description }}</p>
+			<p><h3><strong>Shipping:</strong></h3> The item will be shipped within 2 business days of a completed transaction. The tracking number will be emailed to you.</p>
+			<p><h3><strong>Returns:</strong></h3> I do not accept returns on used items. I accept refunds, or replacements on items that are damaged in shipping. Contact me at armyglass@hotmail.com with your name, and a picture of the damaged item.</p>
+  		</div>
+	</div>
+{% endblock %}
