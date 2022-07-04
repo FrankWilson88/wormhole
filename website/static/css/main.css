@@ -15,23 +15,324 @@
   padding: 15px;
 }
 
-@media only screen and (max-width: 599px){
-  /* For Mobile: */
+@media only screen and (max-width: 599px) {
+  /* 
+  ===============
+  For Mobile: 
+  ===============
+  */
 
-  footer{
-    text-align: left;
-    font-family: Cinzel;
-    font-variant: small-caps;
-    font-family: 20px;
-    width: 100%;
-    margin: 10px;
-    clear: both;
+  body.mobile{
+    font-family: Zen Kurenaido, Arial;
   }
-  footer small{width: 25%;}
-  footer small a{color: yellow; text-decoration: none;}
-  footer small a:hover{color: white;}
-  footer small a:active{color: red;}
-  footer p{font-size: 15px; clear: both;}  
+  body.mobile header{
+    background: url("../img/wormholeLogo.png") center no-repeat;
+    height: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  body.mobile h1.title{
+    clear: both;
+    text-align: center;
+    font-family: Cinzel;
+    font-variant: small-caps; 
+    border-bottom: 2px dotted black;
+    border-top: 2px dotted black;
+  }
+
+  /* Main Nav */
+  nav.mobile{
+    width: 100%;
+    height: 7%;
+    bottom: 1%;
+    position: fixed;
+    z-index: 1;
+  }
+  nav.mobile img.mobileImg{
+    width: 10%;
+    background: black;
+    border-radius: 50px;
+  }
+  nav.mobile img.mobileImg:active{background: red;}
+  nav.mobile div.mobileMenu{
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0%;
+  }
+  nav.mobile div.mobileMenu a{
+    color: green;
+    float: left;
+    margin: 2%;
+  }
+  nav.mobile div.mobileMenu a p{display: none;}
+  nav.mobile div.mobileMenu a img.mobileIcon{
+    width: 50px;
+    padding: 2%;
+    background: white;
+    border-radius: 50px;
+    float: left;
+  }
+  nav.mobile div.mobileMenu a img.mobileIcon:active{background: red;}
+
+  nav.mobileNavSub{
+    width: 100%;
+    height: 30px;
+    border-radius: 25px;
+
+  }
+  nav.mobileNavSub div.effect{
+    height: 100%;
+    width: 100%;
+    margin: 0 2%;
+    text-align: center;
+    float: left;
+  }
+  nav.mobileNavSub div.effect a{
+    color: black;
+    margin: 0 2%;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  nav.mobileNavSub div.effect a:active{transform: scale(2, 1);}
+
+
+  /* Dropdown Content */
+  div.dropdown div.dropdownContent{
+    display: none;
+    position: absolute;
+    width: 200px;
+    margin: 100%;
+    padding: 60%;
+  }
+  div.dropdown div.dropdownContent a{
+    overflow: hidden;
+    width: 0%;
+    text-align: center;
+    background: black;
+    float: left; 
+    clear: left;
+    animation: mobileAnime 1s forwards;
+  }
+  @keyframes mobileAnime{
+    from {}
+    to {width: 100%;}
+  }
+
+  /* Index Layout */
+  aside div#twitch-playlist{
+    width: 450px;
+    height: 180px;
+  }
+
+  /*About Page*/
+  /*Profile Card Style*/
+  .profileCard{
+    margin: 5% 0;
+    padding: 1%;
+    border: 2px solid black;
+    transition: 1s;
+    text-align: center;
+    box-shadow: 5px 5px 5px black;
+  }
+  .profileCard a img{
+    width: 10%;
+    margin: 2%;      
+  }
+  .profileCard a img:active{
+    background: black;
+    border-radius: 25px;
+  }
+
+  .polaroid{
+    display: none;
+  }
+  .polaroid2{
+    display: none;
+  }
+
+  /*Article Page*/
+  /* Article Preview */
+  div.preview{/* Generic Main Content Layout */
+    height: 100%;
+    margin: 2% 0;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px black;
+  }
+  div.preview small{padding: 0; float: left; clear: left;}
+  div.preview img{
+    padding-bottom: 5%;
+    height: 150px;
+    width: 150px;
+  }
+  div.preview h2{
+    padding: 0 5%;
+    float: left;
+  }
+  div.preview h2 a{text-decoration: none; color: blue;}
+  div.preview h2 a:active{color: red;}
+  div.preview p{
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    width: 100%; 
+    height: 8em; 
+    white-space: normal;
+    display: block;
+  }
+
+  /*Article Detailed View*/
+  article.detailedView{
+    margin: 5%;
+  }
+  article.detailedView section{box-shadow: 5px 5px 5px black;}
+  article.detailedView a:active{color: red;}
+  article.detailedView a{text-decoration: none; color: blue;}
+  article.detailedView aside img{
+    height: 50%;
+    width: 50%;
+    float: left;
+  }
+
+  /* Layout for PADS Page */
+  body div.mainContent div.pads{
+    margin: 0;
+    padding: 2%;
+  }
+  div.pads img{width: 100%;}
+  div.pads pre{width: 100px;}
+  body div.mainContent div.pads h2{border-bottom: 2px dotted black; border-top: 2px dotted black;}
+  
+  /*Shop Page*/
+  /*Shop Preview*/
+  .item{
+    margin: 2%;
+    padding: 1%;
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px black;
+  }
+  .item a{
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+  }
+  .item a:active{transform: scale(2, 1);}
+  .item p{text-align: center;}
+  .item img{
+    width: 100%;
+    height: 250px;
+  }
+
+  /*Shop Detailed View*/
+  small.detailedView{
+    width: 100%;
+    margin-bottom: 2%;
+		float: left;
+	}
+  small.detailedView a{
+ 		font-family: Cinzel;
+		font-variant: small-caps;	
+    text-decoration: none;
+    margin-bottom: 2%;
+  }
+  small.detailedView a:nth-child(2):before{
+    content: " > ";
+  }
+  div.imgList img.highlight{
+      float: left;
+      clear: left;
+      width: 100%;
+      margin-top: 15%;
+      cursor: pointer;
+      box-shadow: none;
+  }
+  
+  div.content{display: none;}
+	div.content img.imgView{
+    width: 100%;
+    margin-left: 2%;
+    float: left;  
+  } 
+	div.detailedView{
+    float: right;
+	}
+  .img-magnifier-container {
+    position: relative;
+  }
+  .img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
+  }
+	div.detailedView div.details{
+		width: 100%;
+		float: right;
+	}
+	div.detailedView div.details h2{
+		text-align: center;
+		width: 100%;
+    padding: 2%;
+		border: 2px solid black;
+		border-radius: 25px;
+		background: lightblue;
+	}
+  div.detailedView div.details h2 a{text-decoration: none;}
+	div.detailedView div.details h3{
+		margin: 0;
+		padding: 0;
+	}
+
+  /*Reports Styles*/
+  fieldset.pc table.data{
+    text-align: center;
+    width: 100%;
+  }
+  fieldset.pc table.data th{
+    padding-bottom: .5em;
+    border-bottom: 2px solid black;
+  }
+  fieldset.pc table.data td.sum{border-top: 2px solid black;}
+  fieldset.pc table.report{
+    width: 100%;
+    text-align: left;
+  }
+  fieldset.pc table.report th{
+    padding-bottom: .5em;
+    width: 50%;
+  }
+  fieldset.pc table.report td{
+    width: 50%;
+    float: left;
+  }
+  fieldset.pc table.report td.sum{
+    border-top: 2px solid black; 
+    width: 50%; 
+    float: right;
+  }
+  fieldset.pc table.assets{
+    width: 50%;
+    text-align: left;
+    float: left;
+  }
+  fieldset.pc table.liab{
+    width: 50%;
+    text-align: left;
+    float: right;
+  }
+  fieldset.pc table.oe{
+    width: 50%;
+    text-align: left;
+    float: right;
+  }
 
   .col-m-1 {width: 8.33%;}
   .col-m-2 {width: 16.66%;}
@@ -65,25 +366,24 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  /* For desktop: */
-
+  /* 
+  ================
+  For desktop: 
+  ================
+  */
+  
   /* Generic Layout */
-  body{
-    font-family: Zen Kurenaido;
+  body.pc{
+    font-family: Zen Kurenaido, Arial;
     margin: 0 5%;
   }
-  body header{
+  body.pc header{
     background: url("../img/wormholeLogo.png") center no-repeat;
     height: 500px;
     width: 100%;
     text-align: center;
   }
-  body header h1{
-    font-family: Cinzel;
-    font-variant: small-caps; 
-    margin: 0 30%;
-  }
-  h1.title{
+  body.pc h1.title{
     clear: both;
     text-align: center;
     font-family: Cinzel;
@@ -94,7 +394,7 @@
   }
 
   /* Main Nav Menu */
-  nav.scaleNav{
+  nav.pc{
     width: 100%;
     height: 30px;
     position: sticky;
@@ -104,16 +404,19 @@
     border-radius: 25px;
     box-shadow: 5px 5px 5px inset rgba(200,200,200,0.75);
   }
-  nav.scaleNav p{float: left; width: 25%; margin: 0 2%; padding: 0;}
-
-  nav.scaleNav div.effect, nav.scaleNav div.dropdown div.effect{
+  nav.pc p{float: left; width: 25%; margin: 0 2%; padding: 0;}
+  nav.pc img.mobileImg{display: none;}
+  nav.pc div.pcMenu{display: block; width: 100%;}
+  nav.pc div.effect{
     height: 100%;
     width: 5%;
     margin: 0 2%;
     text-align: center;
     float: right;
   }
-  nav.scaleNav div.effect a, nav.scaleNav div.dropdown div.effect a{
+  nav.pc div.effect p{display: block; width: 100%;}
+  nav.pc img.mobileIcon{display: none;}
+  nav.pc div.effect a{
     color: black;
     margin: 0 2%;
     font-size: 18px;
@@ -121,8 +424,8 @@
     display: inline-block;
     transition: 1s;
   }
-  nav.scaleNav div.effect a:hover, nav.scaleNav div.dropdown div.effect a:hover{transform: scale(2, 1);}
-  nav.scaleNav div.effect div.beam, nav.scaleNav div.dropdown div.effect div.beam{
+  nav.pc div.effect a:hover, nav.pc div.dropdown div.effect a:hover{transform: scale(2, 1);}
+  nav.pc div.effect div.beam, nav.pc div.dropdown div.effect div.beam{
     position: relative;
     display: block;
     float: right;
@@ -130,20 +433,20 @@
     width: 0;
   }
 
-  nav.scaleNavSub{
+  nav.pcNavSub{
     width: 100%;
     height: 30px;
     border-radius: 25px;
 
   }
-  nav.scaleNavSub div.effect{
+  nav.pcNavSub div.effect{
     height: 100%;
     width: 25%;
     margin: 0 2%;
     text-align: center;
     float: left;
   }
-  nav.scaleNavSub div.effect a{
+  nav.pcNavSub div.effect a{
     color: black;
     margin: 0 2%;
     font-size: 18px;
@@ -151,14 +454,15 @@
     display: inline-block;
     transition: 1s;
   }
-  nav.scaleNavSub div.effect a:hover{transform: scale(2, 1);}
-  nav.scaleNavSub div.effect div.beam{
+  nav.pcNavSub div.effect a:hover{transform: scale(2, 1);}
+  nav.pcNavSub div.effect div.beam{
     position: relative;
     display: block;
     float: right;
     clear: right;
     width: 0;
   }
+
   div.effect:hover div.beam{animation: beameffect forwards 1s;}
   @keyframes beameffect{
     from {}
@@ -181,9 +485,6 @@
     list-style: none;
     cursor: pointer;
   }
-    
-  /* Generic main Content Layouts */
-  body div.mainContent{clear: both; height: 200px}
 
   /* Login Layout */
   body div.mainContent div.login{
@@ -196,53 +497,12 @@
     box-shadow: 5px 5px 5px black;
   }
 
-  /*Article Page*/
-  /* Article Preview */
-  div.preview{/* Generic Main Content Layout */
-    height: 200px;
+  /* Index Layout */
+  body.pc div.twitchPlayer iframe{
+    width: 450px;
+    height: 180px;
   }
-  div.preview small{padding: 0 5%; float: left; clear: left;}
-  div.preview img{
-    padding-bottom: 5%;
-    height: 150px;
-    width: 150px;
-  }
-  div.preview h2{
-    padding: 0 5%;
-    float: left;
-  }
-  div.preview h2 a{text-decoration: none; color: blue;}
-  div.preview h2 a:hover{color: green;}
-  div.preview h2 a:active{color: red;}
-  div.preview p{
-    text-overflow: ellipsis;
-    overflow: hidden; 
-    width: 350px; 
-    height: 7.9em; 
-    white-space: normal;
-    display: block;
-  }
-  div.preview:hover{animation: articleeffect forwards 0.5s;}
-  @keyframes articleeffect{
-    from{}
-    to{
-      border-radius: 25px;
-      box-shadow: 5px 5px 5px black;
-    }
-  }
-  /*Article Detailed View*/
-  article.detailedView{
-    margin: 5%;
-  }
-  article.detailedView section{box-shadow: 5px 5px 5px black;}
-  article.detailedView a:active{color: red;}
-  article.detailedView a:hover{color: green;}
-  article.detailedView a{text-decoration: none; color: blue;}
-  article.detailedView aside img{
-    height: 50%;
-    width: 50%;
-    float: left;
-  }
+
 
   /*About Page*/
   /*Profile Card Style*/
@@ -311,8 +571,64 @@
     width: 100%;
   }
 
-  /* Layout for PADS Page */
-  body div.mainContent div.pads{
+  /*Article Page*/
+  /* Article Preview */
+  div.preview{/* Generic Main Content Layout */
+    height: 200px;
+  }
+  div.preview small{padding: 0 5%; float: left; clear: left;}
+  div.preview img{
+    padding-bottom: 5%;
+    height: 150px;
+    width: 150px;
+  }
+  div.preview h2{
+    padding: 0 5%;
+    float: left;
+  }
+  div.preview h2 a{text-decoration: none; color: blue;}
+  div.preview h2 a:hover{color: green;}
+  div.preview h2 a:active{color: red;}
+  div.preview p{
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    width: 350px; 
+    height: 7.9em; 
+    white-space: normal;
+    display: block;
+  }
+  div.preview:hover{animation: articleeffect forwards 0.5s;}
+  @keyframes articleeffect{
+    from{}
+    to{
+      border-radius: 25px;
+      box-shadow: 5px 5px 5px black;
+    }
+  }
+  /*Article Detailed View*/
+  article.detailedView{
+    margin: 5%;
+  }
+  article.detailedView section{box-shadow: 5px 5px 5px black;}
+  article.detailedView a:active{color: red;}
+  article.detailedView a:hover{color: green;}
+  article.detailedView a{text-decoration: none; color: blue;}
+  article.detailedView aside img{
+    height: 50%;
+    width: 50%;
+    float: left;
+  }
+
+   /* Layout for PADS Page */
+   body div.mainContent div.pads{
+    margin: 0 10%;
+    padding: 2%;
+  }
+  body div.mainContent div.pads h2{border-bottom: 2px dotted black; border-top: 2px dotted black;}
+
+
+   /* Layout for PADS Page */
+   body div.mainContent div.pads{
     margin: 0 10%;
     padding: 2%;
   }
@@ -462,17 +778,6 @@
     float: right;
   }
 
-  /* Login Layout */
-  div.login{
-    width: 50%;
-    margin: 2% 25%;
-    padding: 5%;
-    text-align: center;
-    border: 2px outset black;
-    border-radius: 25px;
-    box-shadow: 5px 5px 5px black;
-  }
-
   /* Footer Layout */
   footer{
     font-family: Cinzel;
@@ -487,8 +792,7 @@
   footer small a:hover{color: black;}
   footer small a:active{color: red;}
   footer p{font-size: 15px; clear: both;}
-
-  /* Responsive Layout */
+  
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}

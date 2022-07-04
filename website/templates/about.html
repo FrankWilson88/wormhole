@@ -5,9 +5,8 @@
 {% block title %}About | Wormhole Enterprise{% endblock %}
 
 {% block content %}
-  <h1 class="title">Let us Introduce Ourselves!</h1>
   <article class="about">
-
+    <h1 class="title">Let us Introduce Ourselves!</h1>
     <section class="profileCard col-4 col-s-4">
       <img src="{% static 'img/wormholeLogo.png' %}">
       <h3>Name</h3>
@@ -32,7 +31,7 @@
 
     <section class="col-8 col-s-6">
       <h2>Current Projects:</h2>
-      <nav class="scaleNavSub">
+      <nav class="pcNavSub mobileNavSub">
         <div class="effect">
           <a href="{% url 'pads' %}" title="Documentation Page">Project PADS</a>
           <div class="beam"></div>

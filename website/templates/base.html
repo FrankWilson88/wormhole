@@ -12,14 +12,14 @@
   <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body class="row">
+<body class="row pc tablet mobile">
   <header></header>
 
   {% include 'inc/scaleNav.html' %}
 
   {% block content %}{% endblock %}
 
-  {% if user.is_authenticate %}
+  {% if user.is_authenticated %}
     {% block super %}{% endblock %}
   {% endif %}
 
@@ -27,11 +27,13 @@
     <div id="clock">clock error</div>
     <small>
       Copyright &copy; <a href="https://www.wormhole.click">Wormhole Enterprise </a><div id ="copyright"></div><br>
-  		<a href="https://www.flaticon.com/free-icons/ui" target="_blank" title="ui icons">Ui icons created by IYAHICON - Flaticon</a>
+  		<a href="https://www.flaticon.com/free-icons/" target="_blank" title="ui icons">Ui icons created by - Flaticon</a>
     </small>
   </footer>
   <script src="{% static 'js/clock.js' %}"></script>
   <script src="{% static 'js/tab.js' %}"></script>
   <script src="{% static 'js/magnifyImg.js' %}"></script>
+  <script src="{% static 'js/mobileMenu.js' %}"></script>
+  <script src="{% static 'js/twitchPlayer.js' %}"></script>
 </body>
 </html>

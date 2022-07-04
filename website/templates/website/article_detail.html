@@ -6,13 +6,13 @@
 
 {% block content %}
   <article class="detailedView">
-    <section class="col-9 col-s-6">
+    <section class="col-9 col-s-6 col-m-6">
     <a href="javascript:history.back()">Go Back</a>
     <h2>{{ object.title }}</h2>
     <small>Created by {{ object.createdBy }} @ {{ object.createdOn }}</small>
     <p>{{ object.content }}</p>
     </section>
-    <aside class="col-3 col-s-6">
+    <aside class="col-3 col-s-6 col-m-4">
     {% if object.img1 %}<img src="{{ object.img1.url }}" alt="1st Pic">{% else %}{% endif %}
     {% if object.img2 %}<img src="{{ object.img2.url }}" alt="2nd Pic">{% else %}{% endif %}
     {% if object.img3 %}<img src="{{ object.img3.url }}" alt="3rd Pic">{% else %}{% endif %}

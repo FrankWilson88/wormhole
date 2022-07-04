@@ -7,27 +7,27 @@
 {% block content %}
 
 
- 	<small class="detailedView"><a href="{% url 'index' %}" title="Back to Store">Store</a><a href="/prodo/{{ object.snid }}" title="This Page">{{ object.model }}</a></small>
-	<div class="imgList col-1 col-s-1">
+ 	<small class="detailedView"><a href="{% url 'shop' %}" title="Back to Store">Store</a><a href="/prodo/{{ object.snid }}" title="This Page">{{ object.model }}</a></small>
+	<div class="imgList col-1 col-s-1 col-m-3">
     	<img src="{{ object.image.url }}" onclick="tab('image', this)" class="highlight btn" id="default">
     	<img src="{{ object.image2.url }}" onclick="tab('image2', this)" class="highlight btn">
     	<img src="{{ object.image3.url }}" onclick="tab('image3', this)" class="highlight btn">
     	<img src="{{ object.image4.url }}" onclick="tab('image4', this)" class="highlight btn">
     	<img src="{{ object.image5.url }}" onclick="tab('image5', this)" class="highlight btn">
   	</div>
-  	<div id="image" class="content img-magnifier-container col-5 col-s-5">
+  	<div id="image" class="content img-magnifier-container col-5 col-s-5 col-m-9">
 		<img class="imgView" id="magnify" src="{{ object.image.url }}" width="600" height="400">
 	</div>  
-  	<div id="image2" class="content img-magnifier-container col-5 col-s-5">
+  	<div id="image2" class="content img-magnifier-container col-5 col-s-5 col-m-9">
 		<img class="imgView" id="magnify2" src="{{ object.image2.url }}" width="600" height="400">
 	</div>  
-  	<div id="image3" class="content img-magnifier-container col-5 col-s-5">
+  	<div id="image3" class="content img-magnifier-container col-5 col-s-5 col-m-9">
 		<img class="imgView" id="magnify3" src="{{ object.image3.url }}" width="600" height="400">
 	</div>  
-  	<div id="image4" class="content img-magnifier-container col-5 col-s-5">
+  	<div id="image4" class="content img-magnifier-container col-5 col-s-5 col-m-9">
 		<img class="imgView" id="magnify4" src="{{ object.image4.url }}" width="600" height="400">
 	</div>  
-	  <div id="image5" class="content img-magnifier-container col-5 col-s-5">
+	  <div id="image5" class="content img-magnifier-container col-5 col-s-5 col-m-9">
 		<img class="imgView" id="magnify5" src="{{ object.image5.url }}" width="600" height="400">
 	</div>  
 

@@ -1,21 +1,22 @@
-<nav class="scaleNav">
-  {% if user.is_authenticated %}
-    <p>Hi, {{ user.username }}!</p>
+{% load static %}
+
+<nav class="pc mobile">
+  <img class="mobileImg" onclick="openMenu()" src="{% static 'img/controlpanel.png' %}" alt="Menu">
+  <div id="openMobileMenu" class="mobileMenu pcMenu">
+
+    {% if user.is_authenticated %}
+    <p id="greeting">Hi, {{ user.username }}!</p>
     {% block super %}
       <div class="effect">
-        <a href="{% url 'admin:index' %}" title="Link to Backend" target="_blank">Admin</a>
+        <a href="{% url 'logout' %}" title="Get the fuck outta heeeeeere"><p>Log Out</p><img src="{% static 'img/logout.png' %}" class="mobileIcon" alt="Log Out"></a>
         <div class="beam"></div>
       </div>
-      <div class="effect">
-        <a href="{% url 'logout' %}" title="Get the fuck outta heeeeeere">Log Out</a>
-        <div class="beam"></div>
-      </div>
-      <div class="dropdown">
+      <div class="dropdown" onclick="openDropdown()">
         <div class="effect">
-          <a href="#">Data</a>
+          <a><p>Data</p><img src="{% static 'img/monitor.png' %}" class="mobileIcon" alt="Data"></a>
           <div class="beam"></div>
         </div>
-        <div class="dropdownContent">
+        <div class="dropdownContent" id="mobileDropdown">
           <div class="effect">
             <a href="{% url 'inventory' %}" title="View your entire Inventory">Inventory</a>
             <div class="beam"></div>
@@ -50,24 +51,26 @@
    {% else %}
       <p>Logged Out</p>
       <div class="effect">
-        <a href="{% url 'login' %}" title="Enter...if you dare.">Login</a>
+        <a href="{% url 'login' %}" title="Enter...if you dare." placeholder="Log In"><p>Log In</p><img src="{% static 'img/login.png' %}" class="mobileIcon" alt="Log In"></a>
         <div class="beam"></div>
       </div>
   {% endif %}
   <div class="effect">
-    <a href="{% url 'articles' %}" title="See current Articles">Articles</a>
+    <a href="{% url 'articles' %}" title="See current Articles"><p>Articles</p><img src="{% static 'img/articles.png' %}" class="mobileIcon" alt="Articles"></a>
     <div class="beam"></div>
   </div>
   <div class="effect">
-    <a href="{% url 'shop' %}" title="See items for sale">Shop</a>
+    <a href="{% url 'shop' %}" title="See items for sale"><p>Shop</p><img src="{% static 'img/shop.png' %}" class="mobileIcon" alt="Shop"></a>
     <div class="beam"></div>
   </div>
   <div class="effect">
-    <a href="{% url 'about' %}" title="Contact info, Terms of Service, Social Links, etc.">About</a>
+    <a href="{% url 'about' %}" title="Contact info, Terms of Service, Social Links, etc."><p>About</p><img src="{% static 'img/about.png' %}" class="mobileIcon" alt="About"></a>
     <div class="beam"></div>
   </div>
   <div class="effect">
-    <a href="{% url 'index' %}" title="Back to the Main Page">Home</a>
+    <a href="{% url 'index' %}" title="Back to the Main Page"><p>Home</p><img src="{% static 'img/homeIcon.png' %}" class="mobileIcon" alt="Home"></a>
     <div class="beam"></div>
   </div>
+</div>
 </nav>
+
